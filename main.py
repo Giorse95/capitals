@@ -1,9 +1,12 @@
 #! /usr/bin/env python3
 
-from NewPackage import capitals
+'''We are importing check module from NewPackage'''
 
-capitals.check_capital("Germany")
-capitals.check_capital("Honduras")
-capitals.check_state("Rome")
-capitals.check_state("Tokyo")
+from NewPackage import checks
+
+checks.capitals.check_capital("Germany")
+checks.capitals.check_capital("Honduras")
+checks.capitals.check_state("Rome")
+checks.capitals.check_state("Tokyo")
+
 
