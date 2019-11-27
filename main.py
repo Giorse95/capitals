@@ -6,16 +6,17 @@ from NewPackage import capitals
 
 import sys 
 
-if __name__ == __main__:
-	capitals.check_capital(sys.argv[1])
-else:
-	print("Please type a valide capital")
+if __name__ == "__main__":
+	if sys.argv[1] == 'check':
+		capitals.check_capital("Germany")
+		capitals.check_capital("Honduras")
+		capitals.check_state("Rome")
+		capitals.check_state("Tokyo")
+	else:
+		capitals.check_state(sys.argv[1])
 
 
-checks.check_capital("Germany")
-checks.check_capital("Honduras")
-checks.check_state("Rome")
-checks.check_state("Tokyo")
+
 
 
 
