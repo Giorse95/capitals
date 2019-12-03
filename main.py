@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-'''In the main.py we are importing the module check from mypackage'''
+'''In the main.py we are importing the module check from mypackage Alice down'''
 
 from NewPackage import capitals
 
