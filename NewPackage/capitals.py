@@ -58,14 +58,24 @@ list_of_capitals = {'Aland Islands':'Mariehamn',
 'Vatican City':'Vatican City'}
 
 def check_capital(state_name):
-    if state_name in list_of_capitals:
-        print("The capital of {} is {}".format(state_name, list_of_capitals[state_name]))
-    else:
-        print("Sorry, {} does not seem to be an European state".format(state_name))
+    if args.name in list_of_capitals:
+        if args.verbosity >= 2:
+            print(" We are checking your input in order to understand if it is contained in the list of capitals,The capital of {} is {}".format(state_name, list_of_capitals[state_name] ))
+        elif args.verbosity >= 1:
+            print("The capital of {} is {}".format(state_name, list_of_capitals[state_name])
+        else:
+            print(list_of_capitals[state_name]) 
 
 def check_state(capital_name):
     for state, capital in list_of_capitals.items():
         if capital == capital_name:
-            print("The European state whose capital is {} is {}".format(capital_name, state))
-            return
-    print("Sorry, {} is not the capital of any European state".format(capital_name))
+            if args.verbosity >= 2:
+                print(" We are checking your input in order to understand if it is contained in the list of capitals,The European state whose capital is {} is {}".format(capital_name, state))
+            elif args.verbpsoty >= 1:
+                print("The European state whose capital is {} is {}".format(capital_name, state))
+            else:
+                print(state)
+    if capital not in list_of_capitals.values():
+        print("Sorry, {} is not the capital of any European state".format(capital_name))
+    elif state not in list_of_capitals.keys():
+        print("Sorry, {} is not a European state".format(state))
