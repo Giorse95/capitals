@@ -4,16 +4,24 @@
 
 from NewPackage import capitals
 
-import sys 
+import argparse
 
-if __name__ == "__main__":
-	if sys.argv[1] == 'check':
-		capitals.check_capital("Germany")
-		capitals.check_capital("Honduras")
-		capitals.check_state("Rome")
-		capitals.check_state("Tokyo")
-	else:
-		capitals.check_state(sys.argv[1])
+
+def parse_arguments():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('name', help ='Please, insert the capital or the state')
+    parser.add_argument('-v', '--verbosity',
+    help = 'Incrementally increase the verbosity', action='count', default=0)
+    args = parser.parse_args()
+    return args
+
+
+if __name__ == '__main__':
+    args = parse_arguments()
+    capitals.check_capital(args)
+    capitals.check_state(args)
+
 
 
 
